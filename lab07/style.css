@@ -1,0 +1,11 @@
+body{font-family: Verdana, sans-serif; color: #0d1217;background-color:#d6dcdf;}
+h1,h2 {color: #66a2f0;}
+a {color: #b683f5;}
+.evenrow {background-color: #8f8f8fec;}
+h1 {font-size: 3 em;}
+h2 {font-size: 2 em;}
+.caption{color: #66a2f0;}
+nav a {color: #395ae0;}
+nav a:hover {background-color: #f6f6f9;}
+nav {padding: 10px;}
+nav {margin-bottom: 30px;}
