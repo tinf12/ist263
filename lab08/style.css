@@ -1,0 +1,20 @@
+body{font-family: Verdana, sans-serif; color: #0d1217;background-color:#d6dcdf;}
+h1,h2 {color: #66a2f0;}
+a {color: #b683f5;}
+.evenrow {background-color: #8f8f8fec;}
+h1 {font-size: 3 em;}
+h2 {font-size: 2 em;}
+.caption{color: #66a2f0;}
+nav a {color: #395ae0;}
+nav a:hover {background-color: #f6f6f9;}
+nav {padding: 10px;}
+nav {margin-bottom: 10px;}
+.quote{float: right;}
+
+.row1 {background-color: #f6f6f9; border-radius: 1em; display: flex; margin-bottom: 20px;}
+    .column1 {width: 50%; order: 1; clear: both; margin-left: 30px;}
+    .column2 {width: 50%; order: 2; clear: both;}
+
+.row2 {background-color: #f6f6f9; border-radius: 1em; display: flex;}
+.column3 {width: 50%; order: 1; clear: both; margin-left: 70px; margin-top: 70px;}
+.column4 {width: 50%; order: 2; clear: both;margin-right: 40px;margin-top: 20x;}
