@@ -10,11 +10,12 @@ nav a:hover {background-color: #f6f6f9;}
 nav {padding: 10px;}
 nav {margin-bottom: 10px;}
 .quote{float: right;}
+.title{margin-left: 40px;}
 
-.row1 {background-color: #f6f6f9; border-radius: 1em; display: flex; margin-bottom: 20px;}
+.row1 {background-color: #f6f6f9; border-radius: 1em; display: flex; margin-bottom: 20px; margin-left: 40px; margin-right: 40px;}
     .column1 {width: 50%; order: 1; clear: both; margin-left: 30px;}
     .column2 {width: 50%; order: 2; clear: both;}
 
-.row2 {background-color: #f6f6f9; border-radius: 1em; display: flex;}
+.row2 {background-color: #f6f6f9; border-radius: 1em; display: flex; margin-left: 40px; margin-right: 40px; padding: 10px;} 
 .column3 {width: 50%; order: 1; clear: both; margin-left: 70px; margin-top: 70px;}
-.column4 {width: 50%; order: 2; clear: both;margin-right: 40px;margin-top: 20x;}
+.column4 {width: 50%; order: 2; clear: both;margin-right: 40px; margin-top: 20x;}
