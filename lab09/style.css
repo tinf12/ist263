@@ -1,0 +1,30 @@
+body{font-family: Verdana, sans-serif; color: #0d1217;background-color:#d6dcdf;}
+h1,h2 {color: #66a2f0;}
+a {color: #b683f5;}
+.evenrow {background-color: #8f8f8fec;}
+.caption{color: #66a2f0;}
+nav a {color: #395ae0;}
+nav a:hover {background-color: #f6f6f9;}
+nav {padding: 10px;}
+nav {margin-bottom: 10px;}
+.quote{float: right;}
+
+.heading{background-color: #f6f6f9; border-radius: 1em; display: flex; margin-left: 420px; margin-right: 420px; justify-content: center;}
+.table{display: flex; float: left; margin-left: 400px; margin-top: 20px;}
+
+.intro{text-align:center; width: 65%; margin-left: 30px; margin-top: 30px;}
+.flexbox{display:flex; justify-content: space-between; margin-left: 50px; margin-right: 50px;}
+.flexbox1{display:flex; justify-content:space-around; flex: 3; order: 1; margin-top: 60px; margin-right: 40px ;}
+.flexbox2{display:flex; background-color: #f6f6f9; border-radius: 1em; flex: 1; order: 2; padding: 30px; margin-left: 40px;}
+
+
+
+
+
+.row1 {background-color: #f6f6f9; border-radius: 1em; display: flex; margin-bottom: 20px; margin-left: 40px; margin-right: 40px;}
+    .column1 {width: 50%; order: 1; clear: both; margin-left: 30px;}
+    .column2 {width: 50%; order: 2; clear: both;}
+
+.row2 {background-color: #f6f6f9; border-radius: 1em; display: flex; margin-left: 40px; margin-right: 40px; padding: 10px;} 
+    .column3 {width: 50%; order: 1; clear: both; margin-left: 70px; margin-top: 70px;}
+    .column4 {width: 50%; order: 2; clear: both;margin-right: 40px; margin-top: 20x;}
