@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Text</title>
+    <style>
+        body {font-family: Arial, sans-serif; text-align: center; margin-top: 20%;}
+
+        .large {display: none; color: rgb(45, 166, 218); font-size: 3em;}
+
+        .small {display: none; color: rgb(255, 0, 8);}
+
+        @media only screen and (min-width: 801px) {.large {display: block;}}
+
+        @media only screen and (max-width: 800px) {.small { display: block;}}
+    </style>
+</head>
+<body>
+    <div class="large">I’m large.</div>
+    <div class="small">I’m small.</div>
+</body>
+</html>
