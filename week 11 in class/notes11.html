@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <title>JavaScript</title>
+    
+    <script>
+       function SecondBlock() {
+            alert("Second Alert");
+       }
+   
+        function ThirdAlert() {
+            alert("Third Alert");
+        }
+
+        function clicky() {
+            alert("Hello World!");
+        }
+
+        function hovery() {
+            alert("Hello Hovery!");
+        }
+
+        function loady() {
+            alert("Hello Loader!");
+        }
+    </script>
+    
+ </head>
+
+    <body onload="loady()">
+        
+        <script>
+            alert("I am sending an alert")
+        </script>
+    
+        <p>content goes here</p>
+
+         <a href="#" onclick="SecondBlock()"> 
+            Click me for the second alert
+         </a>
+            <br>
+            <br>
+         <a href="#" onmouseover="ThirdAlert()"> 
+            Hover over me for the third alert
+        </a>
+
+        <ul>
+            <li><a href="#" onclick="clicky()">Click me for the first alert</a></li>
+            <li><a href="#" onmouseover="hovery()">Hover over me for the second alert</a></li>
+        </ul>
+ </head>
+    </body>
+
+</html>
