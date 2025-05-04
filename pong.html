@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pong Game</title>
+    <style>
+        canvas {
+            display: block;
+            margin: 0 auto;
+            background: black;
+        }
+        #winMessage {
+            text-align: center;
+            color: white;
+            font-size: 24px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="winMessage">You Win!</div>
+    <canvas id="pongCanvas" width="800" height="400"></canvas>
+    <script>
+        const canvas = document.getElementById('pongCanvas');
+        const ctx = canvas.getContext('2d');
+
+        const paddleWidth = 10, paddleHeight = 100;
+        const ballSize = 10;
+
+        let playerY = canvas.height / 2 - paddleHeight / 2;
+        let aiY = canvas.height / 2 - paddleHeight / 2;
+        let ballX = canvas.width / 2, ballY = canvas.height / 2;
+        let ballSpeedX = 4, ballSpeedY = 4;
+
+        const playerSpeed = 3;
+
+        let keys = {};
+        let playerScore = 0;
+        let aiScore = 0;
+
+        const winMessage = document.getElementById('winMessage');
+
+        function drawRect(x, y, width, height, color) {
+            ctx.fillStyle = color;
+            ctx.fillRect(x, y, width, height);
+        }
+
+        function drawCircle(x, y, radius, color) {
+            ctx.fillStyle = color;
+            ctx.beginPath();
+            ctx.arc(x, y, radius, 0, Math.PI * 2);
+            ctx.fill();
+        }
+
+        function drawNet() {
+            for (let i = 0; i < canvas.height; i += 20) {
+                drawRect(canvas.width / 2 - 1, i, 2, 10, 'white');
+            }
+        }
+
+        function drawScore() {
+            ctx.fillStyle = 'white';
+            ctx.font = '20px Arial';
+            ctx.fillText(`Player: ${playerScore}`, 50, 30);
+            ctx.fillText(`AI: ${aiScore}`, canvas.width - 100, 30);
+        }
+
+        function moveAI() {
+            const aiCenter = aiY + paddleHeight / 2;
+            const reactionSpeed = 2; // Adjust AI reaction speed
+            if (ballSpeedX > 0) { // Only move AI when ball is heading towards it
+            if (aiCenter < ballY - 10) aiY += reactionSpeed;
+            else if (aiCenter > ballY + 10) aiY -= reactionSpeed;
+            }
+        }
+
+        function update() {
+            ballX += ballSpeedX;
+            ballY += ballSpeedY;
+
+            if (ballY <= 0 || ballY >= canvas.height) ballSpeedY = -ballSpeedY;
+
+            if (ballX <= paddleWidth) {
+                if (ballY > playerY && ballY < playerY + paddleHeight) {
+                    ballSpeedX = -ballSpeedX;
+                } else {
+                    aiScore++;
+                    checkWin();
+                    resetBall();
+                }
+            }
+
+            if (ballX >= canvas.width - paddleWidth) {
+                if (ballY > aiY && ballY < aiY + paddleHeight) {
+                    ballSpeedX = -ballSpeedX;
+                } else {
+                    playerScore++;
+                    checkWin();
+                    resetBall();
+                }
+            }
+
+            if (keys['ArrowUp'] && playerY > 0) playerY -= playerSpeed;
+            if (keys['ArrowDown'] && playerY < canvas.height - paddleHeight) playerY += playerSpeed;
+
+            moveAI();
+        }
+
+        function resetBall() {
+            ballX = canvas.width / 2;
+            ballY = canvas.height / 2;
+            ballSpeedX = -ballSpeedX;
+        }
+
+        function checkWin() {
+            if (playerScore === 5) {
+                winMessage.style.display = 'block';
+                cancelAnimationFrame(gameLoopId);
+            }
+        }
+
+        function draw() {
+            drawRect(0, 0, canvas.width, canvas.height, 'black');
+            drawNet();
+            drawRect(0, playerY, paddleWidth, paddleHeight, 'white');
+            drawRect(canvas.width - paddleWidth, aiY, paddleWidth, paddleHeight, 'white');
+            drawCircle(ballX, ballY, ballSize, 'white');
+            drawScore();
+        }
+
+        let gameLoopId;
+        function gameLoop() {
+            update();
+            draw();
+            gameLoopId = requestAnimationFrame(gameLoop);
+        }
+
+        window.addEventListener('keydown', (e) => {
+            keys[e.key] = true;
+        });
+
+        window.addEventListener('keyup', (e) => {
+            keys[e.key] = false;
+        });
+
+        gameLoop();
+    </script>
+</body>
+</html>
